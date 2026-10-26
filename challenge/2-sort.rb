@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
-results = ARGV.map { |arg| arg.to_i }.sort
-results.each { |result| puts result }
+result = ARGV.select { |arg| arg =~ /\A-?\d+\z/ }.map(&:to_i).sort
+
+result.each do |n|
+  puts n
+end
 
